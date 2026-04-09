@@ -30,8 +30,11 @@ while task.wait(2) do
 		if not v.Character:FindFirstChild("HumanoidRootPart") then continue end
 		if v.Character.HumanoidRootPart:FindFirstChild("ESP_ATT") then continue end
 
+		local teamColor = v.TeamColor.Color or Color3.new(0,0,0)
+
 		local newHigh = Instance.new("Highlight")
 		newHigh.FillTransparency = 1
+		newHigh.OutlineColor = teamColor
 		newHigh.Parent = v.Character
 		table.insert(highs, newHigh)
     
@@ -42,10 +45,13 @@ while task.wait(2) do
     
 		local espBeam = Instance.new("Beam")
 		espBeam.Parent = v.Character
+		espBeam.Color = ColorSequence.new(teamColor)
+		
 		espBeam.Width0 = 0.2
 		espBeam.Width1 = 0.2
 		espBeam.Attachment0 = thisAtt
 		espBeam.Attachment1 = espAtt
+		
 		espBeam.FaceCamera = true
 		table.insert(beams, espBeam)
 	end
