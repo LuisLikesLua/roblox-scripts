@@ -5,7 +5,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 })
 
 local thisAtt
-local alive = false
+local alive = true
 game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
 	task.wait(1)
 	alive = true
