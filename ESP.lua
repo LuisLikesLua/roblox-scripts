@@ -4,14 +4,28 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Duration = 3
 })
 
-local thisAtt = Instance.new("Attachment")
-thisAtt.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+local thisAtt
+local alive = false
+game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
+	task.wait(1)
+	alive = true
+	
+	thisAtt = Instance.new("Attachment")
+	thisAtt.Parent = char.HumanoidRootPart
+
+	char.Humanoid.Died:Connect(function()
+		alive = false
+	end)
+end)
+
 
 local atts = {}
 local beams = {}
 local highs = {}
 
 while task.wait(2) do
+	if not alive then task.wait(1) continue end
+	
 	for _,v in pairs(atts) do
 		v:Destroy()
 	end
