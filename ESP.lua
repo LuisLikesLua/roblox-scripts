@@ -30,7 +30,7 @@ while task.wait(2) do
 		if not v.Character:FindFirstChild("HumanoidRootPart") then continue end
 		if v.Character.HumanoidRootPart:FindFirstChild("ESP_ATT") then continue end
 
-		local teamColor = v.TeamColor.Color or Color3.new(0,0,0)
+		local teamColor = v.TeamColor.Color
 
 		local newHigh = Instance.new("Highlight")
 		newHigh.FillTransparency = 1
