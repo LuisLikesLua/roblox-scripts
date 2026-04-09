@@ -6,4 +6,6 @@
  `loadstring(game:HttpGet("[REDIRECT LINK]"))()`<br>
  and then run it
 ## Made by me? list
+ If the file name is on this list, then I have coded it
+ 
  ESP.lua
