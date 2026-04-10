@@ -27,7 +27,7 @@ while task.wait(2) do
         table.insert(guis, gui)
 
 		local weapon = model:FindFirstChildOfClass("Model")
-		local weaponLabel = Instance.new("Label")
+		local weaponLabel = Instance.new("TextLabel")
 		weaponLabel.Parent = gui
 		weaponLabel.Size = UDim2.new(1,0,0.1,0)
 		weaponLabel.Position = UDim2.new(0,0,1.1,0)
