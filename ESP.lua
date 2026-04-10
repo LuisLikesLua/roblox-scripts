@@ -64,7 +64,7 @@ while task.wait(2) do
 			
 			while task.wait() do
 				if not healthFrame then return end
-				if not (v.Character and v.Character.Humanoid) then continue end
+				if not (v.Character and v.Character:FindFirstChildOfClass("Humanoid")) then continue end
 				
 				healthFrame.Size = UDim2.new(1,0,v.Character.Humanoid.Health/v.Character.Humanoid.MaxHealth,0)
 				healthFrame.Position = UDim2.new(0,0,1-(v.Character.Humanoid.Health/v.Character.Humanoid.MaxHealth),0)
