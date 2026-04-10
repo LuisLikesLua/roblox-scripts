@@ -31,7 +31,7 @@ while task.wait(2) do
 		weaponLabel.Parent = gui
 		weaponLabel.Size = UDim2.new(1,0,0.1,0)
 		weaponLabel.Position = UDim2.new(0,0,1.1,0)
-		weaponlabel.TextScaled = true
+		weaponLabel.TextScaled = true
 		weaponLabel.Text = weapon.Name
 		
         local frame = Instance.new("Frame")
