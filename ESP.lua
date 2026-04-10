@@ -56,6 +56,18 @@ while task.wait(2) do
 		frame.Size = UDim2.new(1, 0, 1, 0)
 		frame.BackgroundTransparency = 1
 		frame.Parent = gui
+		task.spawn(function()
+			local healthFrame = Instance.new("Frame")
+			healthFrame.Parent = gui
+			healthFrame.BackgroundTransparency = 0.5
+			healthFrame.BackgroundColor3 = Color3.new(1,0,0)
+			
+			while task.wait() do
+				if not healthFrame then return end
+				healthFrame.Size = UDim2.new(1,0,v.Character.Humanoid.Health/v.Character.Humanoid.MaxHealth,0)
+				healthFrame.Position = UDim2.new(0,0,1-(v.Character.Humanoid.Health/v.Character.Humanoid.MaxHealth),0)
+			end
+		end)
 		
 		local stroke = Instance.new("UIStroke")
 		stroke.Thickness = 2
