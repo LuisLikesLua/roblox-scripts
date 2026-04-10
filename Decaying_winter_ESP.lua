@@ -14,13 +14,12 @@ while task.wait(2) do
 	for _,v in pairs(workspace:GetDescendants()) do
 		if not v:IsA("Humanoid") then continue end
 		if game.Players:GetPlayerFromCharacter(v.Parent) then continue end
-		if not v.Parent:FindFirstChild("HumanoidRootPart") then continue end
 
 		local gui = Instance.new("BillboardGui")
 		gui.Size = UDim2.new(4, 0, 6, 0)
 		gui.AlwaysOnTop = true
 		gui.LightInfluence = 0
-		gui.Parent = v.Character
+		gui.Parent = v.Parent
 		table.insert(guis, gui)
 		
 		local frame = Instance.new("Frame")
