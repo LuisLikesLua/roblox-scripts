@@ -45,6 +45,6 @@ while task.wait(2) do
 		local stroke = Instance.new("UIStroke")
 		stroke.Thickness = 2
 		stroke.Parent = frame
-		stroke.Color = teamColor
+		stroke.Color = Color3.new(0.2,0.2,0.2)
 	end
 end
