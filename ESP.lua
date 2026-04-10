@@ -21,7 +21,7 @@ end)
 
 local atts = {}
 local beams = {}
-local highs = {}
+local guis = {}
 
 while task.wait(2) do
 	if not alive then task.wait(1) continue end
@@ -34,7 +34,7 @@ while task.wait(2) do
 		v:Destroy()
 	end
 
-	for _,v in pairs(highs) do
+	for _,v in pairs(guis) do
 		v:Destroy()
 	end
   
@@ -46,11 +46,20 @@ while task.wait(2) do
 
 		local teamColor = v.TeamColor.Color
 
-		local newHigh = Instance.new("Highlight")
-		newHigh.FillTransparency = 1
-		newHigh.OutlineColor = teamColor
-		newHigh.Parent = v.Character
-		table.insert(highs, newHigh)
+		local gui = Instance.new("BillboardGui")
+		gui.Size = UDim2.new(4, 0, 5, 0) -- how big the box appears in 3D
+		gui.AlwaysOnTop = true
+		gui.LightInfluence = 0
+		gui.Adornee = v.Character.HumanoidRootPart
+		gui.Parent = v.Character
+		table.insert(guis, gui)
+		
+		local frame = Instance.new("Frame")
+		frame.Size = UDim2.new(1, 0, 1, 0)
+		frame.BackgroundTransparency = 1 -- invisible fill
+		frame.BorderSizePixel = 2
+		frame.BorderColor3 = teamColor
+		frame.Parent = gui
     
 		local espAtt = Instance.new("Attachment")
 		espAtt.Name = "ESP_ATT"
