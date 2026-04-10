@@ -47,10 +47,9 @@ while task.wait(2) do
 		local teamColor = v.TeamColor.Color
 
 		local gui = Instance.new("BillboardGui")
-		gui.Size = UDim2.new(4, 0, 5, 0) -- how big the box appears in 3D
+		gui.Size = UDim2.new(1, 0, 1, 0) -- how big the box appears in 3D
 		gui.AlwaysOnTop = true
 		gui.LightInfluence = 0
-		gui.Adornee = v.Character.HumanoidRootPart
 		gui.Parent = v.Character
 		table.insert(guis, gui)
 		
@@ -70,8 +69,8 @@ while task.wait(2) do
 		espBeam.Parent = v.Character
 		espBeam.Color = ColorSequence.new(teamColor)
 		
-		espBeam.Width0 = 0.2
-		espBeam.Width1 = 0.2
+		espBeam.Width0 = 0.15
+		espBeam.Width1 = 0.1
 		espBeam.Attachment0 = thisAtt
 		espBeam.Attachment1 = espAtt
 		
