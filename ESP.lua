@@ -18,24 +18,8 @@ game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
 	end)
 end)
 
-local atts = {}
-local beams = {}
-local guis = {}
-
 while task.wait(2) do
 	if not alive then task.wait(1) continue end
-	
-	for _,v in pairs(atts) do
-		v:Destroy()
-	end
-  
-	for _,v in pairs(beams) do
-		v:Destroy()
-	end
-
-	for _,v in pairs(guis) do
-		v:Destroy()
-	end
   
 	for _,v in pairs(game.Players:GetChildren()) do
 		if v == game.Players.LocalPlayer then continue end
@@ -50,7 +34,6 @@ while task.wait(2) do
 		gui.AlwaysOnTop = true
 		gui.LightInfluence = 0
 		gui.Parent = v.Character
-		table.insert(guis, gui)
 		
 		local frame = Instance.new("Frame")
 		frame.Size = UDim2.new(1, 0, 1, 0)
@@ -79,7 +62,6 @@ while task.wait(2) do
 		local espAtt = Instance.new("Attachment")
 		espAtt.Name = "ESP_ATT"
 		espAtt.Parent = v.Character.HumanoidRootPart
-		table.insert(atts, espAtt)
     
 		local espBeam = Instance.new("Beam")
 		espBeam.Parent = v.Character
@@ -91,6 +73,5 @@ while task.wait(2) do
 		espBeam.Attachment1 = espAtt
 		
 		espBeam.FaceCamera = true
-		table.insert(beams, espBeam)
 	end
 end
