@@ -50,6 +50,7 @@ while task.wait(2) do
 		gui.AlwaysOnTop = true
 		gui.LightInfluence = 0
 		gui.Parent = v.Character
+		table.insert(guis, gui)
 		
 		local frame = Instance.new("Frame")
 		frame.Size = UDim2.new(1, 0, 1, 0)
