@@ -18,7 +18,6 @@ game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
 	end)
 end)
 
-
 local atts = {}
 local beams = {}
 local guis = {}
@@ -47,7 +46,7 @@ while task.wait(2) do
 		local teamColor = v.TeamColor.Color
 
 		local gui = Instance.new("BillboardGui")
-		gui.Size = UDim2.new(1, 0, 1, 0) -- how big the box appears in 3D
+		gui.Size = UDim2.new(1, 0, 1, 0)
 		gui.AlwaysOnTop = true
 		gui.LightInfluence = 0
 		gui.Parent = v.Character
@@ -55,10 +54,11 @@ while task.wait(2) do
 		
 		local frame = Instance.new("Frame")
 		frame.Size = UDim2.new(1, 0, 1, 0)
-		frame.BackgroundTransparency = 1 -- invisible fill
-		frame.BorderSizePixel = 2
-		frame.BorderColor3 = teamColor
 		frame.Parent = gui
+
+		local stroke = Instance.new("UIStroke")
+		stroke.Thickness = 2
+		stroke.Color = teamColor
     
 		local espAtt = Instance.new("Attachment")
 		espAtt.Name = "ESP_ATT"
