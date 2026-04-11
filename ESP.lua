@@ -58,6 +58,16 @@ while task.wait(2) do
 		stroke.Thickness = 2
 		stroke.Parent = frame
 		stroke.Color = teamColor
+
+		local nameLabel = Instance.new("TextLabel")
+		nameLabel.Text = v.Name.." ("..v.UserId..")"
+		nameLabel.Parent = gui
+		nameLabel.Size = UDim2.new(1,0,0.1,0)
+		nameLabel.Position = UDim2.new(0,0,1,0)
+		nameLabel.BackgroundTransparency = 1
+		nameLabel.BorderSizePixel = 0
+		nameLabel.TextScaled = true
+		nameLabel.TextColor = teamColor
     
 		local espAtt = Instance.new("Attachment")
 		espAtt.Name = "ESP_ATT"
@@ -67,7 +77,7 @@ while task.wait(2) do
 		espBeam.Parent = v.Character
 		espBeam.Color = ColorSequence.new(teamColor)
 		
-		espBeam.Width0 = 0.15
+		espBeam.Width0 = 0.1
 		espBeam.Width1 = 0.1
 		espBeam.Attachment0 = thisAtt
 		espBeam.Attachment1 = espAtt
