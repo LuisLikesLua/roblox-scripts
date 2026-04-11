@@ -4,29 +4,12 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	Duration = 3
 })
 
-local thisAtt
-local alive = true
-game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
-	task.wait(1)
-	alive = true
-	
-	thisAtt = Instance.new("Attachment")
-	thisAtt.Parent = char.HumanoidRootPart
-
-	char.Humanoid.Died:Connect(function()
-		alive = false
-	end)
-end)
-
 while task.wait(2) do
-	if not alive then task.wait(1) continue end
-  
 	for _,v in pairs(game.Players:GetChildren()) do
 		if v == game.Players.LocalPlayer then continue end
 		if not v.Character then continue end
 		if not v.Character:FindFirstChild("HumanoidRootPart") then continue end
-		local oldAtt =  v.Character.HumanoidRootPart:FindFirstChild("ESP_ATT")
-		if oldAtt then oldAtt:Destroy() end
+		if v.Character.HumanoidRootPart:FindFirstChild("ESP_ATT") then continue end
 
 		local teamColor = v.TeamColor.Color
 
