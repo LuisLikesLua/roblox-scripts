@@ -31,6 +31,7 @@ while task.wait(2) do
 		local teamColor = v.TeamColor.Color
 
 		local gui = Instance.new("BillboardGui")
+		gui.Adornee = v.Character.Torso or v.Character.HumanoidRootPart
 		gui.Size = UDim2.new(4, 0, 6, 0)
 		gui.AlwaysOnTop = true
 		gui.LightInfluence = 0
