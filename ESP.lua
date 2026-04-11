@@ -35,7 +35,7 @@ while task.wait(2) do
 		gui.Size = UDim2.new(4, 0, 6, 0)
 		gui.AlwaysOnTop = true
 		gui.LightInfluence = 0
-		gui.Parent = v.Character
+		gui.Parent = v.Character.Head
 		
 		local frame = Instance.new("Frame")
 		frame.Size = UDim2.new(1, 0, 1, 0)
