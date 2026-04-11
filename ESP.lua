@@ -25,7 +25,8 @@ while task.wait(2) do
 		if v == game.Players.LocalPlayer then continue end
 		if not v.Character then continue end
 		if not v.Character:FindFirstChild("HumanoidRootPart") then continue end
-		if v.Character.HumanoidRootPart:FindFirstChild("ESP_ATT") then continue end
+		local oldAtt =  v.Character.HumanoidRootPart:FindFirstChild("ESP_ATT")
+		if oldAtt then oldAtt:Destroy() end
 
 		local teamColor = v.TeamColor.Color
 
