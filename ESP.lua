@@ -44,7 +44,7 @@ while task.wait(2) do
 		task.spawn(function()
 			local healthFrame = Instance.new("Frame")
 			healthFrame.Parent = gui
-			healthFrame.BackgroundTransparency = 0.5
+			healthFrame.BackgroundTransparency = 0.7
 			healthFrame.BackgroundColor3 = Color3.new(1,0,0)
 			
 			while task.wait() do
